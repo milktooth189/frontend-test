@@ -14,9 +14,8 @@ code {
 
 .container {
   position: relative;
-  padding-left: 80px;
-  padding-right: 80px;
   min-height: 100vh;
+  padding-bottom: 220px;
 }
 
 .header-nav.active {
@@ -28,7 +27,7 @@ code {
   position: absolute;
   background: #414141;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1608);
-  width: calc(100% - 160px);
+  width: calc(100%);
   height: 64px;
   bottom: 0px;
   display: flex;
@@ -38,7 +37,7 @@ code {
 
   &-item {
     padding: 0px 20px 0px 20px;
-    font-family: Hiragino Kaku Gothic Pro;
+    font-family: "Noto Sans JP";
     font-size: 11px;
     font-weight: 300;
     line-height: 16px;
@@ -55,6 +54,7 @@ code {
   height: 64px;
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr 192px;
+  position: relative;
 
   &-logo {
     padding-left: 160px;
@@ -102,7 +102,7 @@ code {
       color: inherit;
       font-size: inherit;
       font-weight: 300;
-
+      font-family: "Noto Sans JP";
 
     }
   }
@@ -118,10 +118,11 @@ code {
 }
 
 .menu {
-  position: fixed;
+  position: absolute;
   top: 45px;
-  right: 240px;
+  right: 165px;
   width: 270px;
+  z-index: 2;
 
   &-item {
     height: 72px;
@@ -130,9 +131,12 @@ code {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1px;
+    //margin-top: 1px;
+    border-bottom: 1px solid #414141;
     opacity: 0;
     transform: translateY(3px);
+    text-decoration: none;
+    color: #ffffff;
     //transition: opacity 2s ease, transform 2s ease;
   }
 
@@ -140,4 +144,236 @@ code {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.memo {
+  width: 100vw;
+
+
+  &-action {
+    margin: 56px 160px 0px 160px;
+    width: calc(100% - 190px);
+    height: 288px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    z-index: 1;
+
+    &-item {
+      width: 288px;
+      border: 24px solid #FFCC21;
+      background: #2E2E2E;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        top: 24px;
+        left: 19.99px;
+        opacity: 0.25;
+        filter: grayscale(100%);
+      }
+
+      &-info {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-text {
+          width: 180px;
+          font-family: Inter;
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: 0.125px;
+          text-align: center;
+          color: #FFCC21;
+
+        }
+
+        &-btn {
+          background: #FF963C;
+          width: 160px;
+          height: 24px;
+          color: #ffffff;
+          text-align: center;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 20px;
+          font-family: "Noto Sans JP";
+          cursor: pointer;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+.chart {
+  width: calc(100% - 320px);
+  padding-left: 160px;
+  padding-right: 160px;
+  margin-top: 156px;
+
+  &-title {
+    height: 60px;
+    width: 100%;
+    background-color: #414141;
+    display: flex;
+    flex-direction: row;
+
+    &-text {
+      display: grid;
+      padding: 16px 0px 0px 24px;
+      width: 96px;
+
+      & > span {
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0.15000000596046448px;
+        text-align: left;
+        color: white;
+      }
+    }
+
+    &-date {
+      font-family: Inter;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 27px;
+      letter-spacing: 0.10999999940395355px;
+      text-align: left;
+      color: white;
+      padding-top: 16px;
+    }
+  }
+
+  &-bottom {
+    height: 60px;
+    width: calc(100% - 32px);
+    background-color: #414141;
+    display: flex;
+    flex-direction: row;
+    padding-left: 32px;
+
+    &-btn {
+      width: 56px;
+      height: 24px;
+      margin-right: 16px;
+      background-color: #ffffff;
+      font-family: "Noto Sans JP";
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 22px;
+      letter-spacing: 0.07500000298023224px;
+      text-align: center;
+      color: #FFCC21;
+      border-radius: 12px;
+      cursor: pointer;
+
+      &:hover {
+        font-size: 18px;
+      }
+
+      &-active {
+        color: #ffffff;
+        background-color: #FFCC21;
+
+        &:hover {
+          font-size: 15px;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  &-content {
+
+    & > canvas {
+      background-color: #414141;
+    }
+  }
+
+}
+
+.exe {
+  width: calc(100% - 320px);
+  padding-left: 160px;
+  padding-right: 160px;
+  margin-top: 156px;
+
+  &-content {
+    height: 264px;
+    background-color: #414141;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    //overflow-y: scroll;
+
+    &-item {
+      height: 42px;
+      border-left: 24px solid #414141;
+      border-right: 24px solid #414141;
+      background-color: #414141;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+
+      &-left {
+        border-bottom: 2px solid #777777;
+        display: grid;
+
+        &-text {
+          font-family: "Noto Sans JP";
+          font-size: 15px;
+          font-weight: 300;
+          line-height: 22px;
+          letter-spacing: 0.07500000298023224px;
+          text-align: left;
+
+          color: white;
+        }
+
+        &-cal {
+          height: 18px;
+          font-family: Inter;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 18px;
+          letter-spacing: 0.07500000298023224px;
+          text-align: left;
+          color: #FFCC21;
+        }
+      }
+
+      &-time {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.09000000357627869px;
+        text-align: right;
+        color: #FFCC21;
+        border-bottom: 2px solid #777777;
+      }
+    }
+  }
+}
+
+.scrollbar-container {
+
+  background-color: #414141;
+}
+
+.custom-scrollbar .ps__rail-y {
+  background-color: #ffffff;
+}
+
+.custom-scrollbar .ps__thumb-y {
+  background-color: #FFCC21;
 }

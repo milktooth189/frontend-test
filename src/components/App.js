@@ -1,11 +1,15 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import {Outlet} from "react-router-dom";
 
-const App = () => {
+const App = (props) => {
+
   return (
     <div className="container">
-      <Header/>
+      <Header
+      />
+      <Outlet/>
       <Footer/>
     </div>
   )

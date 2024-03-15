@@ -13,14 +13,16 @@ import {store, persistor} from "./store";
 import "./index.scss";
 
 import App from "./components/App";
+import MyRecord from "./components/my-record/MyRecord"
+
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App/>}>
-      <Route path="memo" element={<App/>}/>
-      <Route path="challenge" element={<App/>}/>
-      <Route path="info" element={<App/>}/>
+    <Route exact path="/" element={<App/>}>
+      <Route path="/my-record" element={<MyRecord/>}/>
+      <Route path="/challenge" element={<MyRecord/>}/>
+      <Route path="/info" element={<MyRecord/>}/>
     </Route>
   )
 );
