@@ -18,7 +18,9 @@ import reportWebVitals from "./reportWebVitals";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App/>}>
-      <Route path="dashboard" element={<App/>}/>
+      <Route path="memo" element={<App/>}/>
+      <Route path="challenge" element={<App/>}/>
+      <Route path="info" element={<App/>}/>
     </Route>
   )
 );
