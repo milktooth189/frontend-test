@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import {Outlet} from "react-router-dom";
 
 import LineChart from "./my-record/Chart"
 
@@ -92,7 +91,6 @@ const App = (props) => {
   return (
     <div className="container">
       <Header/>
-      <Outlet/>
       <Footer/>
       <img className="scroll-top" onClick={scrollToTop} src="/icon/component_scroll.png" alt="scroll"/>
 

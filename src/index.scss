@@ -21,7 +21,7 @@ code {
 .scroll-top {
   position: fixed;
   right: 100px;
-  top: 50%
+  top: 75%
 }
 
 .header-nav.active {
@@ -158,10 +158,12 @@ code {
 
   &-action {
     margin: 56px 160px 0px 160px;
-    width: calc(100% - 190px);
+    width: calc(100% - 320px);
     height: 288px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    //grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
+    justify-content: space-between;
     z-index: 1;
 
     &-item {
@@ -590,7 +592,7 @@ code {
 
   &-item {
     height: 241.53px;
-    margin: 10px;
+    margin: 2px 4px 0px 4px;
     display: flex;
     justify-content: center;
 
@@ -629,4 +631,110 @@ code {
   }
 }
 
+.recommend {
+  width: 100%;
 
+  &-menu {
+    width: calc(100% - 320px);
+    padding: 56px 160px 0px 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-item {
+      width: 216px;
+      height: 144px;
+      background-color: #2E2E2E;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-title {
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0.10999999940395355px;
+        text-align: center;
+        color: #FFCC21;
+        margin-bottom: 3px;
+      }
+
+      &-border {
+        height: 1px;
+        width: 56px;
+        border-bottom: 1px solid #ffffff;
+        margin-bottom: 3px;
+      }
+
+      &-text {
+        font-family: "Noto Sans JP";
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 26px;
+        letter-spacing: 0px;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &-content {
+    width: calc(100% - 315px);
+    padding: 0px 160px 0px 160px;
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    &-item {
+      height: 222px;
+      margin: 0px 5px 5px 0px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      &-text {
+        font-family: "Noto Sans JP";
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 22px;
+        letter-spacing: 0.07500000298023224px;
+        text-align: left;
+      }
+
+      &-tag {
+        font-family: "Noto Sans JP";
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 22px;
+        letter-spacing: 0.05999999865889549px;
+        text-align: left;
+        color: #FF963C;
+      }
+
+      & > span {
+        width: 234px;
+        position: relative;
+      }
+
+      &-time {
+        position: absolute;
+        top: 120px;
+        left: 0px;
+        width: 144px;
+        height: 24px;
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0px;
+        text-align: left;
+        padding-left: 8px;
+        color: white;
+        background-color: #FFCC21;
+      }
+
+    }
+  }
+}

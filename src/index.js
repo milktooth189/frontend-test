@@ -6,24 +6,28 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+
+//import redux
 import {Provider} from "react-redux";
 import {PersistGate} from "redux-persist/integration/react";
 import {store, persistor} from "./store";
 
 import "./index.scss";
 
+//route component
 import App from "./components/App";
 import MyRecord from "./components/my-record/MyRecord"
+import Recommend from "./components/recommend/Recommend";
 
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route exact path="/" element={<App/>}>
+    <>
+      <Route exact path="/" element={<App/>}/>
       <Route path="/my-record" element={<MyRecord/>}/>
-      <Route path="/challenge" element={<MyRecord/>}/>
-      <Route path="/info" element={<MyRecord/>}/>
-    </Route>
+      <Route path="/recommend" element={<Recommend/>}/>
+    </>
   )
 );
 
