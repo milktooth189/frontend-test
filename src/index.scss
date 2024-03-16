@@ -18,6 +18,12 @@ code {
   padding-bottom: 220px;
 }
 
+.scroll-top {
+  position: fixed;
+  right: 100px;
+  top: 50%
+}
+
 .header-nav.active {
   text-decoration: none;
   color: #FF963C;
@@ -376,4 +382,84 @@ code {
 
 .custom-scrollbar .ps__thumb-y {
   background-color: #FFCC21;
+}
+
+.diary {
+  width: calc(100% - 304px);
+  padding-left: 160px;
+  padding-right: 144px;
+  margin-top: 156px;
+
+  &-title {
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.10999999940395355px;
+    text-align: left;
+    color: #414141;
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 16px;
+
+    &-item {
+      min-height: 200px;
+      margin: 0px 20px 20px 0px;
+      border: 1px solid black;
+
+      &-time {
+        padding: 16px 0px 0px 16px;
+        width: 147px;
+        height: 48px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.09000000357627869px;
+        text-align: left;
+        color: #414141;
+        display: grid;
+      }
+
+      &-content {
+        padding: 16px;
+        font-family: "Noto Sans JP";
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 17px;
+        letter-spacing: 0.05999999865889549px;
+        text-align: left;
+
+      }
+    }
+  }
+}
+
+.add-daily {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  &-btn {
+    width: 296px;
+    height: 56px;
+    font-family: "Noto Sans JP";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%);
+
+    &:hover {
+      font-size: 20px;
+    }
+  }
 }
