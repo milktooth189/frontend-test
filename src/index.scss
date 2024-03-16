@@ -119,6 +119,9 @@ code {
     align-items: center;
     justify-content: left;
 
+    & > img {
+      cursor: pointer;
+    }
 
   }
 }

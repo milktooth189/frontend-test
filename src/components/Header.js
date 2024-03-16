@@ -40,56 +40,53 @@ const Header = (props) => {
 
 
   return (
-    <>
-      <div className="header">
-        <NavLink to={"/"} className="header-logo">
-          <img src="/icon/logo.png" alt="Logo"/>
-        </NavLink>
-        <NavLink to={"/my-record"} className="header-nav">
-          <div className="header-nav-icon">
-            <img src="/icon/icon_memo.png" alt="Memo"/>
-          </div>
-          <div className="header-nav-text">
-            自分の記録
-          </div>
-        </NavLink>
-        <NavLink to={"/challenge"} className="header-nav">
-          <div className="header-nav-icon">
-            <img src="/icon/icon_challenge.png" alt="Chalenge"/>
-          </div>
-          <div className="header-nav-text">
-            チャレンジ
-          </div>
-        </NavLink>
-        <div onClick={() => setInfo(0)} className="header-nav">
-          <div className="header-nav-icon">
-            <img src="/icon/icon_info.png" alt="Info"/>
-            {info > 0 && <span className="notification">{info}</span>}
-          </div>
-          <div className="header-nav-text">
-            お知らせ
-          </div>
+    <div className="header">
+      <NavLink to={"/"} className="header-logo">
+        <img src="/icon/logo.png" alt="Logo"/>
+      </NavLink>
+      <NavLink to={"/my-record"} className="header-nav">
+        <div className="header-nav-icon">
+          <img src="/icon/icon_memo.png" alt="Memo"/>
         </div>
-        <div className="header-menu">
-          <img onClick={() => setMenuOpen(!menuIsOpen)}
-               src={menuIsOpen ? "/icon/icon_close.png" : "/icon/icon_menu.png"}
-               alt="Menu"/>
+        <div className="header-nav-text">
+          自分の記録
         </div>
-        <div className="menu">
-          {menuItemList.map((item, index) => (
-            <Link onClick={() => setMenuOpen(false)} to={menuIsOpen ? item.path : "#"} key={`menu-item-${index}`}
-                  className={"menu-item" + (menuIsOpen ? " show" : "")}
-                  style={{
-                    transition: `opacity ${(menuIsOpen ? index : (menuItemList.length - index)) * 0.2}s ease, transform 1s ease`,
-                    cursor: menuIsOpen ? "pointer" : "default"
-                  }}>
-              {item.text}
-            </Link>
-          ))}
+      </NavLink>
+      <div className="header-nav">
+        <div className="header-nav-icon">
+          <img src="/icon/icon_challenge.png" alt="Chalenge"/>
+        </div>
+        <div className="header-nav-text">
+          チャレンジ
         </div>
       </div>
-
-    </>
+      <div onClick={() => setInfo(0)} className="header-nav">
+        <div className="header-nav-icon">
+          <img src="/icon/icon_info.png" alt="Info"/>
+          {info > 0 && <span className="notification">{info}</span>}
+        </div>
+        <div className="header-nav-text">
+          お知らせ
+        </div>
+      </div>
+      <div className="header-menu">
+        <img onClick={() => setMenuOpen(!menuIsOpen)}
+             src={menuIsOpen ? "/icon/icon_close.png" : "/icon/icon_menu.png"}
+             alt="Menu"/>
+      </div>
+      <div className="menu">
+        {menuItemList.map((item, index) => (
+          <Link onClick={() => setMenuOpen(false)} to={menuIsOpen ? item.path : "#"} key={`menu-item-${index}`}
+                className={"menu-item" + (menuIsOpen ? " show" : "")}
+                style={{
+                  transition: `opacity ${(menuIsOpen ? index : (menuItemList.length - index)) * 0.2}s ease, transform 1s ease`,
+                  cursor: menuIsOpen ? "pointer" : "default"
+                }}>
+            {item.text}
+          </Link>
+        ))}
+      </div>
+    </div>
   )
 }
 
