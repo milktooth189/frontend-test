@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import {Link, NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
   const [info, setInfo] = useState(0);
   const [menuIsOpen, setMenuOpen] = useState(false);
 
@@ -32,10 +32,10 @@ const Header = () => {
     }
   ];
 
-
+  // set random 1-5 notification each 10s
   useEffect(() => {
     setInterval(() => setInfo(Math.floor(Math.random() * 5) + 1), 10000)
-
+    console.log(props)
   }, []);
 
 
@@ -61,7 +61,7 @@ const Header = () => {
             チャレンジ
           </div>
         </NavLink>
-        <NavLink to={"/info"} onClick={() => setInfo(0)} className="header-nav">
+        <div onClick={() => setInfo(0)} className="header-nav">
           <div className="header-nav-icon">
             <img src="/icon/icon_info.png" alt="Info"/>
             {info > 0 && <span className="notification">{info}</span>}
@@ -69,7 +69,7 @@ const Header = () => {
           <div className="header-nav-text">
             お知らせ
           </div>
-        </NavLink>
+        </div>
         <div className="header-menu">
           <img onClick={() => setMenuOpen(!menuIsOpen)}
                src={menuIsOpen ? "/icon/icon_close.png" : "/icon/icon_menu.png"}
@@ -77,7 +77,7 @@ const Header = () => {
         </div>
         <div className="menu">
           {menuItemList.map((item, index) => (
-            <Link onClick={() => setMenuOpen(false)} to={item.path} key={`menu-item-${index}`}
+            <Link onClick={() => setMenuOpen(false)} to={menuIsOpen ? item.path : "#"} key={`menu-item-${index}`}
                   className={"menu-item" + (menuIsOpen ? " show" : "")}
                   style={{
                     transition: `opacity ${(menuIsOpen ? index : (menuItemList.length - index)) * 0.2}s ease, transform 1s ease`,

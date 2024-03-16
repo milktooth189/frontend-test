@@ -7,6 +7,7 @@ const MyRecord = (props) => {
   const [currentTime, setCurrentTime] = useState("");
   const [chartType, setChartType] = useState(1);
 
+  //get date time and for mat to yyyy.MM.dd
   useEffect(() => {
     const interval = setInterval(() => {
       const currentDate = new Date();
